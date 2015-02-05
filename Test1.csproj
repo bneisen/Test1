@@ -28,6 +28,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PublishDatabases>false</PublishDatabases>
+    <IncludeIisSettings>false</IncludeIisSettings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -57,13 +59,31 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="angularjs\cardsController.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Content Include="angular.html" />
+    <Content Include="angularjs\angular.min.js" />
     <Content Include="default.html" />
+    <Content Include="ember.html" />
+    <Content Include="emberjs\app.js" />
+    <Content Include="emberjs\css\normalize.css" />
+    <Content Include="emberjs\css\style.css" />
+    <Content Include="emberjs\lib\ember-1.9.1.js" />
+    <Content Include="emberjs\lib\handlebars-v2.0.0.js" />
+    <Content Include="emberjs\lib\jquery-1.10.2.js" />
+    <Content Include="emberjs\tests\runner.css" />
+    <Content Include="emberjs\tests\runner.js" />
+    <Content Include="emberjs\tests\tests.js" />
+    <Content Include="emberjs\tests\vendor\qunit-1.12.0.css" />
+    <Content Include="emberjs\tests\vendor\qunit-1.12.0.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\PublishProfiles\Test1PublishProfile1.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -71,6 +91,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
